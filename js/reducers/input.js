@@ -1,4 +1,4 @@
-import inputKeyword from '../actions';
+import INPUT_KEYWORD from '../actions';
 
 const input = (state = [], action) => {
   switch (action.type) {
@@ -13,3 +13,4 @@ const input = (state = [], action) => {
       return state;
   }
 };
+export default input;

@@ -1,12 +1,12 @@
 import { combineReducers } from 'redux';
 import input from './input';
-import posts from './posts';
-import visibilityFilter from './visibilityFilter'
+import postByKey from './posts';
+import visibilityFilter from './visibilityFilter';
 
 const chuckNorris = combineReducers({
   visibilityFilter,
   input,
-  posts
+  postByKey
 });
 
 export default chuckNorris;

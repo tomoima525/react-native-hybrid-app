@@ -1,4 +1,4 @@
-import {SET_VISIBILITY_FILTER, INPUT_KEYWORD, VisibilityFilters} from './actions';
+import {SET_VISIBILITY_FILTER, VisibilityFilters} from '../actions';
 const {INITIAL} = VisibilityFilters;
 
 const visibilityFilter = (state = INITIAL, action) => {

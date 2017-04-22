@@ -41,14 +41,3 @@ export const receivePosts = ( response ) => {
 export const setVisibilityFilter = (filter) => {
   return {type: SET_VISIBILITY_FILTER, filter}
 };
-
-// function getNorrisFromApiAsync() {
-//     return fetch('https://facebook.github.io/react-native/movies.json')
-//       .then((response) => response.json())
-//       .then((responseJson) => {
-//         return responseJson.movies;
-//       })
-//       .catch((error) => {
-//         console.error(error);
-//       });
-//   }

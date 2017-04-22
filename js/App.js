@@ -1,12 +1,17 @@
-import React from 'react'
-import Input from './components/Input'
-import ResultList from './components/ResultList'
+import React, { Component } from 'react';
+import { View } from 'react-native';
+import Input from './containers/Input';
+import ResultList from './components/ResultList';
 
-const App = () => {
-  <div>
-    <Input />
-    <ResultList />
-  </div>
+class App extends Component {
+  render() {
+    return (
+      <View>
+        <Input/>
+        <ResultList/>
+      </View>
+    );
+  }
 }
 
-export default App
+export default App;

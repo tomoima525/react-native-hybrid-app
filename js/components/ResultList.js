@@ -1,5 +1,5 @@
-import React, {Component} from 'react';
-import {ListView, Text, View} from 'react-native';
+import React, {PropTypes, Component} from 'react';
+import {ListView, Text, StyleSheet, View} from 'react-native';
 
 class ResultList extends Component {
   constructor(props) {
@@ -9,7 +9,7 @@ class ResultList extends Component {
     });
     this.state = {
       refreshing: false,
-      dataSource: ds.cloneWithRows(props.list)
+      dataSource: ds.cloneWithRows([])
     };
   }
 
@@ -28,7 +28,7 @@ class ResultList extends Component {
       <View style={styles.container}>
         <ListView
           dataSource={this.state.dataSource}
-          renderRow={(data) => <Row obj={data} onPress={}/>}
+          renderRow={(data) => <Row obj={data}/>}
           renderSeparator={(sectionId, rowId) => <View key={rowId} style={styles.separator}/>}
           enableEmptySections={true}/>
       </View>
@@ -70,3 +70,5 @@ const styles = StyleSheet.create({
     backgroundColor: '#8E8E8E'
   }
 });
+
+export default ResultList;

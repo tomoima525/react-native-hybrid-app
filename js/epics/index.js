@@ -1,10 +1,6 @@
-import { combineReducers } from 'redux';
 import { combineEpics } from 'redux-observable';
-import posts from './posts';
-import visibilityFilter from './visibilityFilter
+import { getNorris } from './posts';
 
-const chuckEpic = combineEpics({
-  getNorris
-});
+const chuckEpic = combineEpics(getNorris);
 
 export default chuckEpic;

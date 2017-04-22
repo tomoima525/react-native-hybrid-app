@@ -1,13 +1,40 @@
+import React, { PropTypes, Component } from 'react';
+import { bindActionCreators } from 'redux';
 import { connect } from 'react-redux';
-import Input from '../components/Input';
-import requestPosts from '../actions';
+import InputComponent from '../components/InputComponent';
+import { requestPosts } from '../actions';
+
+//Container for input
+class Input extends Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      hint: 'Input keywords'
+    };
+  }
+  render() {
+    return (
+      <InputComponent
+        hint={this.state.hint}
+        onButtonPress={(text) => this.startRequest(text)}
+      />
+    );
+  }
+
+  startRequest(text) {
+    this.props.onButtonPress(text);
+  }
+
+}
+
+Input.propTypes = {
+  hint: PropTypes.string,
+};
 
 const mapDispatchToProps = (dispatch) => {
   return {
-    onButtonPress: (text) => {
-      dispatch(requestPosts(text))
-    }
-  }
+    onButtonPress: bindActionCreators(requestPosts,dispatch),
+  };
 }
 
-export default connect(null, mapDispatchToProps)(Input)
+export default connect(null, mapDispatchToProps)(Input);
