@@ -1,5 +1,5 @@
 import React, {PropTypes, Component} from 'react';
-import {ListView} from 'react-native';
+import {View,ListView,StyleSheet} from 'react-native';
 import {connect} from 'react-redux';
 import ResultListComponent from '../components/ResultListComponent';
 import receivePosts from '../actions';
@@ -25,12 +25,23 @@ class ResultList extends Component {
 
   render() {
     return (
+      <View>
+        <View style={styles.separator}/>
         <ResultListComponent
           items={this.state.items}
         />
+      </View>
     );
   }
 }
+
+const styles = StyleSheet.create({
+  separator: {
+    flexDirection: 'row',
+    height: 3,
+    backgroundColor: '#EEEEEE',
+  },
+});
 
 ResultList.propTypes = {
   result: PropTypes.object,

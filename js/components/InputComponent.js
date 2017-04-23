@@ -15,7 +15,8 @@ class InputComponent extends Component {
       <View style={{
         flexDirection: 'row',
         justifyContent: 'space-between',
-        marginTop: 20
+        marginTop: 20,
+        marginRight: 10
       }}>
         <TextInput style={{
           height: 40,
@@ -23,10 +24,17 @@ class InputComponent extends Component {
           paddingLeft: 10,
           marginLeft: 10,
           borderColor: 'gray',
-          borderWidth: 1
-        }} onChangeText={(text) => this.setState({text: text})} value={this.state.text}/>
+          borderWidth: 0,
+        }}
+        underlineColorAndroid="blue"
+        autoCapitalize={'none'}
+        onChangeText={(text) => this.setState({text: text})}
+        placeholder={this.state.text}/>
 
-        <Button onPress={() => this.props.onButtonPress(this.state.text)} title="Press Me" accessibilityLabel="alert"/>
+        <Button
+          onPress={() => this.props.onButtonPress(this.state.text)}
+          title="Search"
+          accessibilityLabel="alert"/>
       </View>
     );
   }

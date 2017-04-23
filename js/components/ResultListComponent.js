@@ -12,7 +12,7 @@ const ResultListComponent = (props) => {
   );
   }
   return (
-      <View >
+      <View>
         <ListView
           dataSource={ds.cloneWithRows(props.items)}
           renderRow={(data) => <Row obj={data}/>}
@@ -35,19 +35,9 @@ ResultListComponent.propTypes = {
 }
 
 const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    justifyContent: 'flex-start',
-    backgroundColor: '#F6F6F6'
-  },
-  title: {
-    fontSize: 20,
-    textAlign: 'left',
-    margin: 10
-  },
   rowLayout: {
     padding: 16,
-    backgroundColor: '#F6F6F6'
+    backgroundColor: '#FFFFFF'
   },
   separator: {
     flex: 1,
