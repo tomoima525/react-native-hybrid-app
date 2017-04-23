@@ -9,7 +9,7 @@ class Input extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      hint: 'Input keywords'
+      hint: 'Input'
     };
   }
   render() {
@@ -27,9 +27,6 @@ class Input extends Component {
 
 }
 
-Input.propTypes = {
-  hint: PropTypes.string,
-};
 
 const mapDispatchToProps = (dispatch) => {
   return {

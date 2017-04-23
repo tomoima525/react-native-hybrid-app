@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { View } from 'react-native';
 import Input from './containers/Input';
-import ResultList from './components/ResultList';
+import ResultList from './containers/ResultList';
 
 class App extends Component {
   render() {
