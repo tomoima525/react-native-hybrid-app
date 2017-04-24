@@ -1,9 +1,21 @@
 import React, {PropTypes} from 'react';
-import {ListView, Text, StyleSheet, TouchableHighlight, View} from 'react-native';
+import {ActivityIndicator, ListView, Text, StyleSheet, TouchableHighlight, View} from 'react-native';
 
 const ResultListComponent = (props) => {
   const ds = new ListView.DataSource({rowHasChanged: (r1, r2) => r1 !== r2});
-  console.log(props.items);
+  console.log(props);
+
+  if(props.isFetching) {
+    return (
+      <View>
+        <ActivityIndicator style= {styles.centering}
+        size="large"
+      />
+      </View>
+  );
+  }
+
+
   if(!props.items){
     return (
       <View>
@@ -11,6 +23,8 @@ const ResultListComponent = (props) => {
       </View>
   );
   }
+
+  if(props.items && !props.isFetching){
   return (
       <View>
         <ListView
@@ -20,6 +34,7 @@ const ResultListComponent = (props) => {
           enableEmptySections={true}/>
       </View>
     );
+  }
 }
 
 const Row = (props) => {
@@ -32,9 +47,15 @@ const Row = (props) => {
 
 ResultListComponent.propTypes = {
   items: PropTypes.array,
+  isFetching: PropTypes.boolean,
 }
 
 const styles = StyleSheet.create({
+  centering: {
+    alignItems: 'center',
+    justifyContent: 'center',
+    padding: 8,
+  },
   rowLayout: {
     padding: 16,
     backgroundColor: '#FFFFFF'

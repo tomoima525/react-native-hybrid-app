@@ -23,8 +23,6 @@ class InputComponent extends Component {
           width: 200,
           paddingLeft: 10,
           marginLeft: 10,
-          borderColor: 'gray',
-          borderWidth: 0,
         }}
         underlineColorAndroid="blue"
         autoCapitalize={'none'}

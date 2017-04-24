@@ -9,15 +9,16 @@ class ResultList extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      isFetching: false,
-    };
+      loading: false,
+      items:[]
+    }
   }
 
   componentWillReceiveProps(nextProps) {
     console.log(nextProps);
     if (nextProps.result) {
       this.setState({
-        isFetching: true,
+        loading: nextProps.visibilityFilter.loading,
         items: nextProps.result.items
       });
     }
@@ -29,6 +30,7 @@ class ResultList extends Component {
         <View style={styles.separator}/>
         <ResultListComponent
           items={this.state.items}
+          isFetching={this.state.loading}
         />
       </View>
     );
@@ -49,9 +51,9 @@ ResultList.propTypes = {
 
 
 const mapStateToProps = (state) => {
-  console.log(state);
   return {
-    result: state.searchResult
+    result: state.searchResult,
+    visibilityFilter: state.visibilityFilter,
   }
 }
 

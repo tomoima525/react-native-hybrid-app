@@ -1,13 +1,19 @@
-import {SET_VISIBILITY_FILTER, VisibilityFilters} from '../actions';
-const {INITIAL} = VisibilityFilters;
+import {RECEIVE_POSTS, REQUEST_POSTS} from '../actions';
 
-const visibilityFilter = (state = INITIAL, action) => {
+const visibilityFilter = (state = {}, action) => {
   switch (action.type) {
-    case SET_VISIBILITY_FILTER:
-      return action.filter;
+    case RECEIVE_POSTS:
+      return {
+        ...state,
+        loading: false
+      };
+    case REQUEST_POSTS:
+        return {
+          ...state,
+          loading: true
+        };
     default:
       return state;
   }
 };
-
 export default visibilityFilter;
