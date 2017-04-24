@@ -1,6 +1,6 @@
 /**
  * ChuckNorrisViewer
- * https://github.com/facebook/react-native
+ * https://github.com/tomoima525/ChuckNorrisViewer
  * @flow
  */
 
