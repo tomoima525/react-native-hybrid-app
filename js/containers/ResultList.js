@@ -1,5 +1,6 @@
-import React, {PropTypes, Component} from 'react';
-import {View,ListView,StyleSheet} from 'react-native';
+import React, {Component} from 'react';
+import PropTypes from 'prop-types';
+import {View, ListView, StyleSheet} from 'react-native';
 import {connect} from 'react-redux';
 import ResultListComponent from '../components/ResultListComponent';
 import receivePosts from '../actions';
