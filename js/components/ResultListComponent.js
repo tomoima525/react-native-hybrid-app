@@ -47,7 +47,7 @@ const Row = (props) => {
 
 ResultListComponent.propTypes = {
   items: PropTypes.array,
-  isFetching: PropTypes.boolean,
+  isFetching: PropTypes.bool,
 }
 
 const styles = StyleSheet.create({
