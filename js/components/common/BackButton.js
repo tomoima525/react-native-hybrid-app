@@ -1,7 +1,7 @@
 import React from 'react';
 import { HeaderBackButton } from 'react-navigation';
 import PropTypes from 'prop-types';
-import { Platform, View, StyleSheet, TouchableHighlight, TouchableNativeFeedback, Text } from 'react-native';
+import { View, StyleSheet, TouchableHighlight, TouchableNativeFeedback, Text } from 'react-native';
 
 // Component for Back Buttons
 
@@ -27,23 +27,11 @@ BaseBackButton.propTypes = {
   backTitle: PropTypes.string.isRequired,
 };
 
-export const BackButtonAndroid = (props, context) => (
-  <BaseBackButton
-    onPress={() => safeBackOnPress(props.onPress)}
-    backTitle={props.backTitle}
-  />
-);
-
-export const BackButtonIos = props => (
+export const BackButton = props => (
   <BaseBackButton
     onPress={
       props.onPress ? props.onPress : Actions.pop
     }
     backTitle={props.backTitle}
-/>
+  />
 );
-
-export const BackButton = props => Platform.select({
-  ios: () => <BackButtonIos {...props} />,
-  android: () => <BackButtonAndroid {...props} />,
-})();

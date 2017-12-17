@@ -5,15 +5,13 @@ import {View, Text, StyleSheet} from "react-native";
 
 const styles = StyleSheet.create({
   container: {
-    flex: 1,
     alignItems: 'center',
     backgroundColor: 'white',
     marginTop: 10,
   },
   textLayout: {
     padding: 10,
-    padding: 10,
-    backgroundColor: '#FFFFFF'
+    backgroundColor: 'white',
   },
 });
 
