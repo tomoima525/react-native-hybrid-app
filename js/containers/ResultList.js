@@ -2,6 +2,7 @@ import React, {Component} from 'react';
 import PropTypes from 'prop-types';
 import {View, ListView, StyleSheet} from 'react-native';
 import {connect} from 'react-redux';
+import {Actions} from "react-native-router-flux";
 import ResultListComponent from '../components/ResultListComponent';
 import receivePosts from '../actions';
 
@@ -32,6 +33,7 @@ class ResultList extends Component {
         <ResultListComponent
           items={this.state.items}
           isFetching={this.state.loading}
+          onPressRow={(value) => Actions.Detail({ item: value })}
         />
       </View>
     );
