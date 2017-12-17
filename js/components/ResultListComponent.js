@@ -30,7 +30,7 @@ const ResultListComponent = (props) => {
       <View>
         <ListView
           dataSource={ds.cloneWithRows(props.items)}
-          renderRow={(data) => <Row obj={data}/>}
+          renderRow={(data) => <Row obj={data} onPressRow={ (value) => props.onPressRow(value) }/>}
           renderSeparator={(sectionId, rowId) => <View key={rowId} style={styles.separator}/>}
           enableEmptySections={true}/>
       </View>
@@ -40,7 +40,7 @@ const ResultListComponent = (props) => {
 
 const Row = (props) => {
   return (
-    <TouchableHighlight >
+    <TouchableHighlight onPress={() => props.onPressRow(props.obj.value) } >
       <Text style= {styles.rowLayout}>{props.obj.value}</Text>
     </TouchableHighlight>
   );
@@ -49,6 +49,7 @@ const Row = (props) => {
 ResultListComponent.propTypes = {
   items: PropTypes.array,
   isFetching: PropTypes.bool,
+  onPressRow: PropTypes.func,
 }
 
 const styles = StyleSheet.create({
