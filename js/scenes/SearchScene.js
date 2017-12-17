@@ -1,11 +1,18 @@
 import React from 'react';
-import { View } from 'react-native';
+import { View, StyleSheet } from 'react-native';
 import Input from '../containers/Input';
 import ResultList from '../containers/ResultList';
 
+const styles = StyleSheet.create({
+  container: {
+    alignItems: 'center',
+    backgroundColor: '#F5FCFF',
+  },
+});
+
 const SearchScene = () => {
   return (
-    <View>
+    <View style={styles.container}>
       <Input/>
       <ResultList/>
     </View>

@@ -6,16 +6,23 @@ import {View, Text, StyleSheet} from "react-native";
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    justifyContent: "center",
-    alignItems: "center",
-    backgroundColor: "#F5FCFF",
+    alignItems: 'center',
+    backgroundColor: 'white',
+    marginTop: 10,
+  },
+  textLayout: {
+    padding: 10,
+    padding: 10,
+    backgroundColor: '#FFFFFF'
   },
 });
 
 const DetailComponent = (props) => {
   return (
     <View style={styles.container}>
-      <Text>{props.item}</Text>
+      <Text style={styles.textLayout}>
+        {props.item}
+      </Text>
     </View>
   );
 }

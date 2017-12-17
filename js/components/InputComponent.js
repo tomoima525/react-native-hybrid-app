@@ -16,24 +16,26 @@ class InputComponent extends Component {
       <View style={{
         flexDirection: 'row',
         justifyContent: 'space-between',
-        marginTop: 20,
-        marginRight: 10
+        backgroundColor: 'white',
+        paddingLeft: 10,
+        paddingRight:10,
       }}>
         <TextInput style={{
           height: 40,
-          width: 200,
-          paddingLeft: 10,
+          //paddingLeft: 10,
           marginLeft: 10,
+          flex: 3,
         }}
         underlineColorAndroid="blue"
         autoCapitalize={'none'}
         onChangeText={(text) => this.setState({text: text})}
         placeholder={this.state.text}/>
 
-        <Button
+        <Button style={{ flex: 1}}
           onPress={() => this.props.onButtonPress(this.state.text)}
           title="Search"
-          accessibilityLabel="alert"/>
+          accessibilityLabel="alert"
+        />
       </View>
     );
   }
