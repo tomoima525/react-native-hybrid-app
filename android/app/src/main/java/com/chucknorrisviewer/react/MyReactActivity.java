@@ -1,4 +1,4 @@
-package com.chucknorrisviewer;
+package com.chucknorrisviewer.react;
 
 import android.content.Context;
 import android.content.Intent;
@@ -7,6 +7,8 @@ import android.support.annotation.Nullable;
 import android.support.v7.app.AppCompatActivity;
 import android.view.KeyEvent;
 
+import com.chucknorrisviewer.BuildConfig;
+import com.chucknorrisviewer.R;
 import com.chucknorrisviewer.nativeModule.ReactEventCallback;
 import com.facebook.react.ReactInstanceManager;
 import com.facebook.react.ReactRootView;
@@ -35,7 +37,7 @@ public class MyReactActivity extends AppCompatActivity implements DefaultHardwar
 
         // bundle file to pass React Native
         Bundle bundle = new Bundle();
-        bundle.putString("initialScene", getIntent().getStringExtra(KEY_SCENE));
+        bundle.putString(ReactConst.INITIAL_SCENE, getIntent().getStringExtra(KEY_SCENE));
 
         // Callback set up
         reactEventCallback = this::handleEvent;
@@ -109,7 +111,17 @@ public class MyReactActivity extends AppCompatActivity implements DefaultHardwar
 
     private void handleEvent(String name, @Nullable ReadableMap map) {
         switch (name) {
-            case "nativeBack":
+            case ReactConst.NATIVE_BACK:
+                finish();
+                break;
+
+            case ReactConst.SELECTED:
+                Intent data = new Intent();
+
+                if(map != null) {
+                    data.putExtra(ReactConst.ITEM_SELECTED, map.getString(ReactConst.ITEM));
+                }
+                setResult(RESULT_OK, data);
                 finish();
                 break;
         }

@@ -1,4 +1,4 @@
-package com.chucknorrisviewer;
+package com.chucknorrisviewer.react;
 
 import com.chucknorrisviewer.nativeModule.ReactEventCallback;
 import com.chucknorrisviewer.nativeModule.ReactEventHook;
@@ -14,7 +14,7 @@ import java.util.List;
 
 public class MyReactPackage implements ReactPackage {
     private ReactEventCallback callback;
-    public MyReactPackage(ReactEventCallback callback) {
+    MyReactPackage(ReactEventCallback callback) {
         this.callback = callback;
     }
 

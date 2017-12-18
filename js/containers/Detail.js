@@ -3,6 +3,7 @@ import PropTypes from 'prop-types';
 import { View } from 'react-native';
 import { connect } from 'react-redux';
 import DetailComponent from '../components/DetailComponent';
+import { itemSelected } from '../native-modules/eventHook';
 
 //Container for detail
 const Detail = (props) => {
@@ -10,6 +11,7 @@ const Detail = (props) => {
       <View>
         <DetailComponent
           item={props.item}
+          onButtonPress={ itemSelected }
         />
       </View>
     );
