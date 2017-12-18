@@ -13,10 +13,15 @@ const initialSceneProps = {
   renderLeftButton: () => <BackButton backTitle='back' onPress={() => console.log("back")} />,
 };
 
+const defaultSceneProps = {
+  initial: false,
+  renderLeftButton: () => {null},
+};
+
 const Scenes = (props, context) => (
   <RouterWithRedux>
     <Scene key="root"
-      {...( true ? initialSceneProps : {} )}
+      renderLeftButton={() => <BackButton backTitle='back' onPress={() => console.log("back")} />}
       // renderLeftButton={() =>
       //   <BackButton
       //     backTitle='back'
@@ -29,9 +34,8 @@ const Scenes = (props, context) => (
           title={name}
           component={component}
           hideNavBar={false}
-          initial={false}
-          renderBackButton={() =>
-            <BackButton backTitle='back' onPress={() => Actions.pop() }/>}
+          renderBackButton={() => <BackButton backTitle='back' onPress={() => Actions.pop() }/>}
+          {...(context.initialScene === name ? initialSceneProps : defaultSceneProps)}
         />
       ))}
     </Scene>

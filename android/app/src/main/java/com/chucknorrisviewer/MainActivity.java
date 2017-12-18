@@ -23,7 +23,7 @@ public class MainActivity extends AppCompatActivity {
         setSupportActionBar(toolbar);
         Button searchChuck = findViewById(R.id.search_chuck);
         searchChuck.setOnClickListener(v ->
-            startActivity(MyReactActivity.createIntent(this, "search")));
+            startActivity(MyReactActivity.createIntent(this, "Search")));
 
         TextView result = findViewById(R.id.result);
 

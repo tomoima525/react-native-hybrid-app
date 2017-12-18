@@ -7,6 +7,7 @@
 import React,{Component} from 'react';
 import {Provider} from 'react-redux';
 import {createStore, applyMiddleware} from 'redux';
+import PropTypes from 'prop-types';
 import {createEpicMiddleware} from 'redux-observable';
 import { composeWithDevTools } from 'remote-redux-devtools';
 import chuckNorris from './js/reducers';
@@ -22,6 +23,14 @@ const store = createStore(chuckNorris, composeEnhancers(applyMiddleware(epicMidd
 
 export default class ChuckNorrisViewer extends Component {
 
+  // Called from App. Child View Component can get values from here.
+  getChildContext() {
+    const { initialScene, data } = this.props;
+    if (data && typeof (data) === 'object') {
+      return { data, initialScene };
+    }
+    return { initialScene }; // No data
+}
   render() {
     return (
       <Provider store={store}>
@@ -30,5 +39,13 @@ export default class ChuckNorrisViewer extends Component {
     );
   }
 }
+
+ChuckNorrisViewer.childContextTypes = {
+  data: PropTypes.oneOfType([
+    PropTypes.shape({ }),
+    PropTypes.string,
+  ]),
+  initialScene: PropTypes.string,
+};
 
 AppRegistry.registerComponent('ChuckNorrisViewer', () => ChuckNorrisViewer);

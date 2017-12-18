@@ -29,6 +29,10 @@ public class MyReactActivity extends AppCompatActivity implements DefaultHardwar
         setContentView(R.layout.activity_react_search);
         reactRootView = findViewById(R.id.rootView);
 
+        // bundle file to pass React Native
+        Bundle bundle = new Bundle();
+        bundle.putString("initialScene", getIntent().getStringExtra(KEY_SCENE));
+
         reactInstanceManager = ReactInstanceManager.builder()
                 .setApplication(getApplication())
                 .setBundleAssetName("index.android.bundle")
@@ -37,7 +41,7 @@ public class MyReactActivity extends AppCompatActivity implements DefaultHardwar
                 .setUseDeveloperSupport(BuildConfig.DEBUG)
                 .setInitialLifecycleState(LifecycleState.RESUMED)
                 .build();
-        reactRootView.startReactApplication(reactInstanceManager, "ChuckNorrisViewer", null);
+        reactRootView.startReactApplication(reactInstanceManager, "ChuckNorrisViewer", bundle);
     }
 
     @Override
