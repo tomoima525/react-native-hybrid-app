@@ -1,13 +1,13 @@
 import React from 'react';
-import {View, Text, StyleSheet} from "react-native";
-//import Button from "react-native-button";
-//import {Actions} from "react-native-router-flux";
+import PropTypes from 'prop-types';
+import {View, Text, StyleSheet, Button} from "react-native";
 
 const styles = StyleSheet.create({
   container: {
     alignItems: 'center',
     backgroundColor: 'white',
     marginTop: 10,
+    marginBottom: 10,
   },
   textLayout: {
     padding: 10,
@@ -21,7 +21,16 @@ const DetailComponent = (props) => {
       <Text style={styles.textLayout}>
         {props.item}
       </Text>
+      <Button
+        onPress={() => props.onButtonPress(props.item)}
+        title="Select"
+      />
     </View>
   );
+}
+
+DetailComponent.propTypes = {
+  item: PropTypes.string,
+  onButtonPress: PropTypes.func,
 }
 export default DetailComponent;
