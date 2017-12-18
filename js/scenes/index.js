@@ -8,14 +8,28 @@ import * as scenes from './scenes';
 
 const RouterWithRedux = connect()(Router);
 
+const initialSceneProps = {
+  initial: true,
+  renderLeftButton: () => <BackButton backTitle='back' onPress={() => console.log("back")} />,
+};
+
 const Scenes = (props, context) => (
   <RouterWithRedux>
-    <Scene key="root">
+    <Scene key="root"
+      {...( true ? initialSceneProps : {} )}
+      // renderLeftButton={() =>
+      //   <BackButton
+      //     backTitle='back'
+      //     onPress={() => }/>
+      //   }
+      >
       { map(scenes, (component, name) => (
         <Scene
           key={name}
           title={name}
           component={component}
+          hideNavBar={false}
+          initial={false}
           renderBackButton={() =>
             <BackButton backTitle='back' onPress={() => Actions.pop() }/>}
         />

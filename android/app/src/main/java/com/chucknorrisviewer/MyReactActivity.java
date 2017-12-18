@@ -42,7 +42,7 @@ public class MyReactActivity extends AppCompatActivity implements DefaultHardwar
 
     @Override
     public void invokeDefaultOnBackPressed() {
-        super.onBackPressed();
+        //super.onBackPressed();
     }
 
     @Override

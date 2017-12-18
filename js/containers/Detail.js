@@ -6,7 +6,6 @@ import DetailComponent from '../components/DetailComponent';
 
 //Container for detail
 const Detail = (props) => {
-  console.log(props.item);
     return (
       <View>
         <DetailComponent
