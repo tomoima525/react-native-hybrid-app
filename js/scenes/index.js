@@ -5,12 +5,13 @@ import { connect } from 'react-redux';
 import map from 'lodash.map';
 import { BackButton } from '../components/common/BackButton';
 import * as scenes from './scenes';
+import { nativeBack } from '../native-modules/eventHook';
 
 const RouterWithRedux = connect()(Router);
 
 const initialSceneProps = {
   initial: true,
-  renderLeftButton: () => <BackButton backTitle='back' onPress={() => console.log("back")} />,
+  renderLeftButton: () => <BackButton backTitle='back' onPress={ nativeBack } />,
 };
 
 const defaultSceneProps = {
@@ -21,7 +22,7 @@ const defaultSceneProps = {
 const Scenes = (props, context) => (
   <RouterWithRedux>
     <Scene key="root"
-      renderLeftButton={() => <BackButton backTitle='back' onPress={() => console.log("back")} />}
+//      renderLeftButton={() => <BackButton backTitle='back' onPress={ nativeBack } />}
       // renderLeftButton={() =>
       //   <BackButton
       //     backTitle='back'

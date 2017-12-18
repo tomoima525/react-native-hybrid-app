@@ -3,11 +3,14 @@ package com.chucknorrisviewer;
 import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
+import android.support.annotation.Nullable;
 import android.support.v7.app.AppCompatActivity;
 import android.view.KeyEvent;
 
+import com.chucknorrisviewer.nativeModule.ReactEventCallback;
 import com.facebook.react.ReactInstanceManager;
 import com.facebook.react.ReactRootView;
+import com.facebook.react.bridge.ReadableMap;
 import com.facebook.react.common.LifecycleState;
 import com.facebook.react.modules.core.DefaultHardwareBackBtnHandler;
 import com.facebook.react.shell.MainReactPackage;
@@ -16,6 +19,7 @@ public class MyReactActivity extends AppCompatActivity implements DefaultHardwar
     private ReactRootView reactRootView;
     private ReactInstanceManager reactInstanceManager;
     private final static String KEY_SCENE = "key_scene";
+    private ReactEventCallback reactEventCallback;
 
     public static Intent createIntent(Context context, String scene){
         Intent intent = new Intent(context, MyReactActivity.class);
@@ -33,15 +37,20 @@ public class MyReactActivity extends AppCompatActivity implements DefaultHardwar
         Bundle bundle = new Bundle();
         bundle.putString("initialScene", getIntent().getStringExtra(KEY_SCENE));
 
+        // Callback set up
+        reactEventCallback = this::handleEvent;
+
         reactInstanceManager = ReactInstanceManager.builder()
                 .setApplication(getApplication())
                 .setBundleAssetName("index.android.bundle")
                 .setJSMainModulePath("index")
                 .addPackage(new MainReactPackage())
+                .addPackage(new MyReactPackage(reactEventCallback))
                 .setUseDeveloperSupport(BuildConfig.DEBUG)
                 .setInitialLifecycleState(LifecycleState.RESUMED)
                 .build();
         reactRootView.startReactApplication(reactInstanceManager, "ChuckNorrisViewer", bundle);
+
     }
 
     @Override
@@ -74,6 +83,10 @@ public class MyReactActivity extends AppCompatActivity implements DefaultHardwar
         if (reactInstanceManager != null) {
             reactInstanceManager.onHostDestroy(this);
         }
+
+        if (reactEventCallback != null) {
+            reactEventCallback = null;
+        }
     }
 
     @Override
@@ -92,5 +105,13 @@ public class MyReactActivity extends AppCompatActivity implements DefaultHardwar
             return true;
         }
         return super.onKeyUp(keyCode, event);
+    }
+
+    private void handleEvent(String name, @Nullable ReadableMap map) {
+        switch (name) {
+            case "nativeBack":
+                finish();
+                break;
+        }
     }
 }
