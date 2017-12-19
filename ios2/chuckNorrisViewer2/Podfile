@@ -8,6 +8,8 @@ target 'chuckNorrisViewer2' do
       'Core',
       'CxxBridge', # Include this for RN >= 0.47
       'DevSupport', # Include this to enable In-App Devmenu if RN >= 0.43
+      'RCTLinkingIOS',
+      'RCTImage',
       'RCTText',
       'RCTNetwork',
       'RCTWebSocket', # needed for debugging

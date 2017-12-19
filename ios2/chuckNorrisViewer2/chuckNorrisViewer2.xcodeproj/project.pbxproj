@@ -14,6 +14,7 @@
 		F393C9161FE83E7600EB0CC0 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F393C9151FE83E7600EB0CC0 /* Assets.xcassets */; };
 		F393C9191FE83E7600EB0CC0 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F393C9171FE83E7600EB0CC0 /* LaunchScreen.storyboard */; };
 		F393C9211FE8811E00EB0CC0 /* MyReactViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F393C9201FE8811E00EB0CC0 /* MyReactViewController.swift */; };
+		F393C9251FE8A36100EB0CC0 /* ReactEventHook.m in Sources */ = {isa = PBXBuildFile; fileRef = F393C9241FE8A36100EB0CC0 /* ReactEventHook.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -28,6 +29,9 @@
 		F393C9181FE83E7600EB0CC0 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		F393C91A1FE83E7600EB0CC0 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		F393C9201FE8811E00EB0CC0 /* MyReactViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyReactViewController.swift; sourceTree = "<group>"; };
+		F393C9221FE8A30F00EB0CC0 /* ReactEventHook.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ReactEventHook.h; sourceTree = "<group>"; };
+		F393C9231FE8A36000EB0CC0 /* chuckNorrisViewer2-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "chuckNorrisViewer2-Bridging-Header.h"; sourceTree = "<group>"; };
+		F393C9241FE8A36100EB0CC0 /* ReactEventHook.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ReactEventHook.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -87,6 +91,9 @@
 				F393C9171FE83E7600EB0CC0 /* LaunchScreen.storyboard */,
 				F393C91A1FE83E7600EB0CC0 /* Info.plist */,
 				F393C9201FE8811E00EB0CC0 /* MyReactViewController.swift */,
+				F393C9221FE8A30F00EB0CC0 /* ReactEventHook.h */,
+				F393C9241FE8A36100EB0CC0 /* ReactEventHook.m */,
+				F393C9231FE8A36000EB0CC0 /* chuckNorrisViewer2-Bridging-Header.h */,
 			);
 			path = chuckNorrisViewer2;
 			sourceTree = "<group>";
@@ -126,6 +133,7 @@
 				TargetAttributes = {
 					F393C90A1FE83E7600EB0CC0 = {
 						CreatedOnToolsVersion = 9.2;
+						LastSwiftMigration = 0920;
 						ProvisioningStyle = Automatic;
 					};
 				};
@@ -215,6 +223,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				F393C9111FE83E7600EB0CC0 /* ViewController.swift in Sources */,
+				F393C9251FE8A36100EB0CC0 /* ReactEventHook.m in Sources */,
 				F393C90F1FE83E7600EB0CC0 /* AppDelegate.swift in Sources */,
 				F393C9211FE8811E00EB0CC0 /* MyReactViewController.swift in Sources */,
 			);
@@ -354,11 +363,14 @@
 			baseConfigurationReference = 19A0D48AA1EF43965A659DA8 /* Pods-chuckNorrisViewer2.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				INFOPLIST_FILE = chuckNorrisViewer2/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.tomoima.chuckNorrisViewer2;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "chuckNorrisViewer2/chuckNorrisViewer2-Bridging-Header.h";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -369,11 +381,13 @@
 			baseConfigurationReference = 3E5A0526109D46744E967341 /* Pods-chuckNorrisViewer2.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				INFOPLIST_FILE = chuckNorrisViewer2/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.tomoima.chuckNorrisViewer2;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "chuckNorrisViewer2/chuckNorrisViewer2-Bridging-Header.h";
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};

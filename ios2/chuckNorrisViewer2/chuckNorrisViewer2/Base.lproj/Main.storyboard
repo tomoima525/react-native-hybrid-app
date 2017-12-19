@@ -25,11 +25,20 @@
                                     <action selector="openReact:" destination="BYZ-38-t0r" eventType="touchUpInside" id="dJ1-rL-VW1"/>
                                 </connections>
                             </button>
+                            <navigationBar contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="teH-8L-Iib">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
+                                <items>
+                                    <navigationItem title="React Home" id="ECx-Lg-1kc"/>
+                                </items>
+                            </navigationBar>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstItem="edC-z7-GXm" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="33" id="8Fp-ni-zC1"/>
+                            <constraint firstAttribute="trailing" secondItem="teH-8L-Iib" secondAttribute="trailing" id="NVX-u8-Inl"/>
                             <constraint firstItem="edC-z7-GXm" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="30" id="WHo-8z-Ql6"/>
+                            <constraint firstItem="teH-8L-Iib" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" id="den-GF-dgF"/>
+                            <constraint firstItem="teH-8L-Iib" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="e7i-th-13U"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
@@ -44,15 +53,6 @@
                     <view key="view" contentMode="scaleToFill" id="a8g-LG-f8s" customClass="MyReact">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="test" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kgm-7G-oZu">
-                                <rect key="frame" x="173" y="357" width="30" height="21"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <viewLayoutGuide key="safeArea" id="bko-cW-D6z"/>
                     </view>
