@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		27130C5190832B04DA26E7AC /* Pods_chuckNorrisViewer2.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C6A7FF68BDED18429844B326 /* Pods_chuckNorrisViewer2.framework */; };
 		F393C90F1FE83E7600EB0CC0 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F393C90E1FE83E7600EB0CC0 /* AppDelegate.swift */; };
 		F393C9111FE83E7600EB0CC0 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F393C9101FE83E7600EB0CC0 /* ViewController.swift */; };
 		F393C9141FE83E7600EB0CC0 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F393C9121FE83E7600EB0CC0 /* Main.storyboard */; };
@@ -16,6 +17,9 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		19A0D48AA1EF43965A659DA8 /* Pods-chuckNorrisViewer2.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-chuckNorrisViewer2.debug.xcconfig"; path = "Pods/Target Support Files/Pods-chuckNorrisViewer2/Pods-chuckNorrisViewer2.debug.xcconfig"; sourceTree = "<group>"; };
+		3E5A0526109D46744E967341 /* Pods-chuckNorrisViewer2.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-chuckNorrisViewer2.release.xcconfig"; path = "Pods/Target Support Files/Pods-chuckNorrisViewer2/Pods-chuckNorrisViewer2.release.xcconfig"; sourceTree = "<group>"; };
+		C6A7FF68BDED18429844B326 /* Pods_chuckNorrisViewer2.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_chuckNorrisViewer2.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		F393C90B1FE83E7600EB0CC0 /* chuckNorrisViewer2.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = chuckNorrisViewer2.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F393C90E1FE83E7600EB0CC0 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		F393C9101FE83E7600EB0CC0 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -31,17 +35,37 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				27130C5190832B04DA26E7AC /* Pods_chuckNorrisViewer2.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		502F862FBD9798324B203AC4 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				19A0D48AA1EF43965A659DA8 /* Pods-chuckNorrisViewer2.debug.xcconfig */,
+				3E5A0526109D46744E967341 /* Pods-chuckNorrisViewer2.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+		9B706D1A0A97CD1D77B773C8 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				C6A7FF68BDED18429844B326 /* Pods_chuckNorrisViewer2.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		F393C9021FE83E7600EB0CC0 = {
 			isa = PBXGroup;
 			children = (
 				F393C90D1FE83E7600EB0CC0 /* chuckNorrisViewer2 */,
 				F393C90C1FE83E7600EB0CC0 /* Products */,
+				502F862FBD9798324B203AC4 /* Pods */,
+				9B706D1A0A97CD1D77B773C8 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -74,9 +98,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = F393C91D1FE83E7600EB0CC0 /* Build configuration list for PBXNativeTarget "chuckNorrisViewer2" */;
 			buildPhases = (
+				4C784285ED2869F013FA1026 /* [CP] Check Pods Manifest.lock */,
 				F393C9071FE83E7600EB0CC0 /* Sources */,
 				F393C9081FE83E7600EB0CC0 /* Frameworks */,
 				F393C9091FE83E7600EB0CC0 /* Resources */,
+				BF212931CF28A89600B31D74 /* [CP] Embed Pods Frameworks */,
+				A1C4635171DF554A22A23D4B /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -133,6 +160,54 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		4C784285ED2869F013FA1026 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		A1C4635171DF554A22A23D4B /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-chuckNorrisViewer2/Pods-chuckNorrisViewer2-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		BF212931CF28A89600B31D74 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-chuckNorrisViewer2/Pods-chuckNorrisViewer2-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		F393C9071FE83E7600EB0CC0 /* Sources */ = {
@@ -276,6 +351,7 @@
 		};
 		F393C91E1FE83E7600EB0CC0 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 19A0D48AA1EF43965A659DA8 /* Pods-chuckNorrisViewer2.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
@@ -290,6 +366,7 @@
 		};
 		F393C91F1FE83E7600EB0CC0 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 3E5A0526109D46744E967341 /* Pods-chuckNorrisViewer2.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
