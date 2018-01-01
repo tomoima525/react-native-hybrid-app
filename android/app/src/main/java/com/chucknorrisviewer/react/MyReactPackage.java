@@ -1,6 +1,6 @@
 package com.chucknorrisviewer.react;
 
-import com.chucknorrisviewer.nativeModule.ReactEventCallback;
+import com.chucknorrisviewer.nativeModule.EventProcessor;
 import com.chucknorrisviewer.nativeModule.ReactEventHook;
 import com.facebook.react.ReactPackage;
 import com.facebook.react.bridge.NativeModule;
@@ -13,15 +13,15 @@ import java.util.List;
 
 
 public class MyReactPackage implements ReactPackage {
-    private ReactEventCallback callback;
-    MyReactPackage(ReactEventCallback callback) {
-        this.callback = callback;
+    private EventProcessor event;
+    MyReactPackage(EventProcessor event) {
+        this.event = event;
     }
 
     @Override
     public List<NativeModule> createNativeModules(ReactApplicationContext reactContext) {
         List<NativeModule> modules = new ArrayList<>();
-        modules.add(new ReactEventHook(reactContext, callback));
+        modules.add(new ReactEventHook(reactContext, event));
         return modules;
     }
 

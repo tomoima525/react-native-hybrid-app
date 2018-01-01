@@ -52,8 +52,9 @@ public class MainActivity extends AppCompatActivity {
                 }
                 break;
             case REACT_REQ_CODE:
+                if (resultCode == RESULT_CANCELED) break;
                 String selected = data.getStringExtra(ReactConst.ITEM_SELECTED);
-                if(!TextUtils.isEmpty(selected)) {
+                if (!TextUtils.isEmpty(selected)) {
                     result.setText(selected);
                 }
                 break;

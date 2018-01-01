@@ -3,27 +3,30 @@ package com.chucknorrisviewer.react;
 import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
-import android.support.annotation.Nullable;
 import android.support.v7.app.AppCompatActivity;
 import android.view.KeyEvent;
 
-import com.chucknorrisviewer.BuildConfig;
+import com.chucknorrisviewer.MainApplication;
 import com.chucknorrisviewer.R;
-import com.chucknorrisviewer.nativeModule.ReactEventCallback;
+import com.chucknorrisviewer.nativeModule.ReactEvent;
 import com.facebook.react.ReactInstanceManager;
 import com.facebook.react.ReactRootView;
-import com.facebook.react.bridge.ReadableMap;
-import com.facebook.react.common.LifecycleState;
 import com.facebook.react.modules.core.DefaultHardwareBackBtnHandler;
-import com.facebook.react.shell.MainReactPackage;
+
+import javax.inject.Inject;
+
+import io.reactivex.disposables.Disposable;
 
 public class MyReactActivity extends AppCompatActivity implements DefaultHardwareBackBtnHandler {
     private ReactRootView reactRootView;
-    private ReactInstanceManager reactInstanceManager;
     private final static String KEY_SCENE = "key_scene";
-    private ReactEventCallback reactEventCallback;
+    private ReactInstanceManager reactInstanceManager;
+    private Disposable disposable;
 
-    public static Intent createIntent(Context context, String scene){
+    @Inject
+    ReactService reactService;
+
+    public static Intent createIntent(Context context, String scene) {
         Intent intent = new Intent(context, MyReactActivity.class);
         intent.putExtra(KEY_SCENE, scene);
         return intent;
@@ -31,6 +34,9 @@ public class MyReactActivity extends AppCompatActivity implements DefaultHardwar
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
+        //Dependency Injection
+        ((MainApplication) getApplication()).getAppComponent().inject(this);
+
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_react_search);
         reactRootView = findViewById(R.id.rootView);
@@ -39,25 +45,33 @@ public class MyReactActivity extends AppCompatActivity implements DefaultHardwar
         Bundle bundle = new Bundle();
         bundle.putString(ReactConst.INITIAL_SCENE, getIntent().getStringExtra(KEY_SCENE));
 
-        // Callback set up
-        reactEventCallback = this::handleEvent;
-
-        reactInstanceManager = ReactInstanceManager.builder()
-                .setApplication(getApplication())
-                .setBundleAssetName("index.android.bundle")
-                .setJSMainModulePath("index")
-                .addPackage(new MainReactPackage())
-                .addPackage(new MyReactPackage(reactEventCallback))
-                .setUseDeveloperSupport(BuildConfig.DEBUG)
-                .setInitialLifecycleState(LifecycleState.RESUMED)
-                .build();
-        reactRootView.startReactApplication(reactInstanceManager, "ChuckNorrisViewer", bundle);
+        reactService.observeReactInstanceManager()
+                .firstElement()
+                .subscribe(instanceManager -> {
+                            reactInstanceManager = instanceManager;
+                            reactRootView.startReactApplication(
+                                    instanceManager,
+                                    "ChuckNorrisViewer",
+                                    bundle);
+                        },
+                        Throwable::printStackTrace);
 
     }
 
     @Override
     public void invokeDefaultOnBackPressed() {
         //super.onBackPressed();
+    }
+
+    @Override
+    protected void onResume() {
+        super.onResume();
+        // Observe event
+        disposable = reactService.observeEvent().subscribe(this::handleEvent);
+
+        if (reactInstanceManager != null) {
+            reactInstanceManager.onHostResume(this, this);
+        }
     }
 
     @Override
@@ -70,24 +84,11 @@ public class MyReactActivity extends AppCompatActivity implements DefaultHardwar
     }
 
     @Override
-    protected void onResume() {
-        super.onResume();
-
-        if (reactInstanceManager != null) {
-            reactInstanceManager.onHostResume(this, this);
-        }
-    }
-
-    @Override
     protected void onDestroy() {
         super.onDestroy();
 
         if (reactInstanceManager != null) {
             reactInstanceManager.onHostDestroy(this);
-        }
-
-        if (reactEventCallback != null) {
-            reactEventCallback = null;
         }
     }
 
@@ -109,8 +110,8 @@ public class MyReactActivity extends AppCompatActivity implements DefaultHardwar
         return super.onKeyUp(keyCode, event);
     }
 
-    private void handleEvent(String name, @Nullable ReadableMap map) {
-        switch (name) {
+    private void handleEvent(ReactEvent event) {
+        switch (event.eventName) {
             case ReactConst.NATIVE_BACK:
                 finish();
                 break;
@@ -118,8 +119,8 @@ public class MyReactActivity extends AppCompatActivity implements DefaultHardwar
             case ReactConst.SELECTED:
                 Intent data = new Intent();
 
-                if(map != null) {
-                    data.putExtra(ReactConst.ITEM_SELECTED, map.getString(ReactConst.ITEM));
+                if (event.data != null) {
+                    data.putExtra(ReactConst.ITEM_SELECTED, event.data.getString(ReactConst.ITEM));
                 }
                 setResult(RESULT_OK, data);
                 finish();

@@ -10,10 +10,10 @@ import com.facebook.react.bridge.ReadableMap;
 
 public class ReactEventHook extends ReactContextBaseJavaModule {
 
-    private final ReactEventCallback callback;
-    public ReactEventHook(ReactApplicationContext reactContext, ReactEventCallback callback) {
+    private final EventProcessor eventProcessor;
+    public ReactEventHook(ReactApplicationContext reactContext, EventProcessor eventProcessor) {
         super(reactContext);
-        this.callback = callback;
+        this.eventProcessor = eventProcessor;
     }
 
     @Override
@@ -24,6 +24,6 @@ public class ReactEventHook extends ReactContextBaseJavaModule {
     @ReactMethod
     public void sendEvent(String name, @Nullable ReadableMap data) {
         // receive parameters from react module
-        callback.onEventSent(name, data);
+        eventProcessor.getEventProcessor().onNext(new ReactEvent(name,data));
     }
 }
