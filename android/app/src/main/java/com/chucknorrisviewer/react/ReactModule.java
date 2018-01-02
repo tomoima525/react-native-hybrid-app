@@ -11,7 +11,13 @@ import dagger.Provides;
 public class ReactModule {
     @Provides
     @Singleton
-    ReactService provideReactService(MainApplication app) {
-        return new ReactService(app);
+    ReactService provideReactService(MainApplication app, ReactRepository reactRepository) {
+        return new ReactService(app, reactRepository);
+    }
+
+    @Provides
+    @Singleton
+    ReactRepository provideReactRepository() {
+        return new ReactRepository();
     }
 }
