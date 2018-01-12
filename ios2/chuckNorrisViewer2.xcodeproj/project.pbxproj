@@ -8,6 +8,9 @@
 
 /* Begin PBXBuildFile section */
 		27130C5190832B04DA26E7AC /* Pods_chuckNorrisViewer2.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C6A7FF68BDED18429844B326 /* Pods_chuckNorrisViewer2.framework */; };
+		F38C67D52003523F001BA762 /* ReactScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = F38C67D42003523F001BA762 /* ReactScene.swift */; };
+		F38C67D72003BB45001BA762 /* ReactService.swift in Sources */ = {isa = PBXBuildFile; fileRef = F38C67D62003BB45001BA762 /* ReactService.swift */; };
+		F38C67D92003BBFE001BA762 /* ReactEvent.swift in Sources */ = {isa = PBXBuildFile; fileRef = F38C67D82003BBFE001BA762 /* ReactEvent.swift */; };
 		F393C90F1FE83E7600EB0CC0 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F393C90E1FE83E7600EB0CC0 /* AppDelegate.swift */; };
 		F393C9111FE83E7600EB0CC0 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F393C9101FE83E7600EB0CC0 /* ViewController.swift */; };
 		F393C9141FE83E7600EB0CC0 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F393C9121FE83E7600EB0CC0 /* Main.storyboard */; };
@@ -21,6 +24,9 @@
 		19A0D48AA1EF43965A659DA8 /* Pods-chuckNorrisViewer2.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-chuckNorrisViewer2.debug.xcconfig"; path = "Pods/Target Support Files/Pods-chuckNorrisViewer2/Pods-chuckNorrisViewer2.debug.xcconfig"; sourceTree = "<group>"; };
 		3E5A0526109D46744E967341 /* Pods-chuckNorrisViewer2.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-chuckNorrisViewer2.release.xcconfig"; path = "Pods/Target Support Files/Pods-chuckNorrisViewer2/Pods-chuckNorrisViewer2.release.xcconfig"; sourceTree = "<group>"; };
 		C6A7FF68BDED18429844B326 /* Pods_chuckNorrisViewer2.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_chuckNorrisViewer2.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		F38C67D42003523F001BA762 /* ReactScene.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReactScene.swift; sourceTree = "<group>"; };
+		F38C67D62003BB45001BA762 /* ReactService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReactService.swift; sourceTree = "<group>"; };
+		F38C67D82003BBFE001BA762 /* ReactEvent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReactEvent.swift; sourceTree = "<group>"; };
 		F393C90B1FE83E7600EB0CC0 /* chuckNorrisViewer2.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = chuckNorrisViewer2.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F393C90E1FE83E7600EB0CC0 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		F393C9101FE83E7600EB0CC0 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -63,6 +69,18 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
+		F38C67D320035217001BA762 /* ReactNative */ = {
+			isa = PBXGroup;
+			children = (
+				F393C9221FE8A30F00EB0CC0 /* ReactEventHook.h */,
+				F393C9241FE8A36100EB0CC0 /* ReactEventHook.m */,
+				F38C67D42003523F001BA762 /* ReactScene.swift */,
+				F38C67D62003BB45001BA762 /* ReactService.swift */,
+				F38C67D82003BBFE001BA762 /* ReactEvent.swift */,
+			);
+			path = ReactNative;
+			sourceTree = "<group>";
+		};
 		F393C9021FE83E7600EB0CC0 = {
 			isa = PBXGroup;
 			children = (
@@ -84,6 +102,7 @@
 		F393C90D1FE83E7600EB0CC0 /* chuckNorrisViewer2 */ = {
 			isa = PBXGroup;
 			children = (
+				F38C67D320035217001BA762 /* ReactNative */,
 				F393C90E1FE83E7600EB0CC0 /* AppDelegate.swift */,
 				F393C9101FE83E7600EB0CC0 /* ViewController.swift */,
 				F393C9121FE83E7600EB0CC0 /* Main.storyboard */,
@@ -91,8 +110,6 @@
 				F393C9171FE83E7600EB0CC0 /* LaunchScreen.storyboard */,
 				F393C91A1FE83E7600EB0CC0 /* Info.plist */,
 				F393C9201FE8811E00EB0CC0 /* MyReactViewController.swift */,
-				F393C9221FE8A30F00EB0CC0 /* ReactEventHook.h */,
-				F393C9241FE8A36100EB0CC0 /* ReactEventHook.m */,
 				F393C9231FE8A36000EB0CC0 /* chuckNorrisViewer2-Bridging-Header.h */,
 			);
 			path = chuckNorrisViewer2;
@@ -222,9 +239,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F38C67D52003523F001BA762 /* ReactScene.swift in Sources */,
 				F393C9111FE83E7600EB0CC0 /* ViewController.swift in Sources */,
 				F393C9251FE8A36100EB0CC0 /* ReactEventHook.m in Sources */,
+				F38C67D72003BB45001BA762 /* ReactService.swift in Sources */,
 				F393C90F1FE83E7600EB0CC0 /* AppDelegate.swift in Sources */,
+				F38C67D92003BBFE001BA762 /* ReactEvent.swift in Sources */,
 				F393C9211FE8811E00EB0CC0 /* MyReactViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

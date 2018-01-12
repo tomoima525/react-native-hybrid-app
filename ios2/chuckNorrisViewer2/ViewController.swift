@@ -22,7 +22,8 @@ class ViewController: UIViewController {
 
     @IBAction
     func openReact(_ sender:UIButton) {
-        let nextView = storyboard!.instantiateViewController(withIdentifier: "ReactView")
+        let nextView = storyboard!.instantiateViewController(withIdentifier: "ReactView") as! MyReactViewController
+        nextView.reactScene = ReactScene.makeSearch()
         self.present(nextView, animated: true, completion: nil)
     }
 }

@@ -8,6 +8,7 @@
 
 #import "ReactEventHook.h"
 #import <React/RCTLog.h>
+#import "chuckNorrisViewer2-Swift.h"
 
 @implementation ReactEventHook
 
@@ -16,5 +17,6 @@ RCT_EXPORT_MODULE(EventHook)
 RCT_EXPORT_METHOD(sendEvent:(NSString *)name data:(nullable NSDictionary *)data)
 {
     RCTLogInfo(@"Pretending to create an event %@ at %@", name, data);
+    [ReactService.shared handleEvent:name data:data];
 }
 @end
