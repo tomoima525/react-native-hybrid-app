@@ -15,9 +15,6 @@ struct ReactEventCallback {
     init(callback: @escaping ((ReactEvent) -> Void)) {
         self.callback = callback
     }
-//    func onEventCalled(reactEvent: ReactEvent) {
-//        callback(reactEvent)
-//    }
 }
 
 @objc final class ReactService: NSObject {
@@ -29,7 +26,6 @@ struct ReactEventCallback {
             return
         }
         callbacks.forEach { callback in
-//            callback.onEventCalled(reactEvent: event)
             callback.callback(event)
         }
     }
