@@ -1,3 +1,5 @@
+# React Native Hybrid App
+
 - A sample implementation of React Native - Native Hybrid application using ReactNative + Redux + RxJs
 - This application opens React Native screen from Native platform, fetch a list of Chuck Norris Fact on React Native, and return selected value to Native platform.  
 
