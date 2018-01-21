@@ -1,0 +1,442 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 48;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		27130C5190832B04DA26E7AC /* Pods_chuckNorrisViewer2.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C6A7FF68BDED18429844B326 /* Pods_chuckNorrisViewer2.framework */; };
+		F38C67D52003523F001BA762 /* ReactScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = F38C67D42003523F001BA762 /* ReactScene.swift */; };
+		F38C67D72003BB45001BA762 /* ReactService.swift in Sources */ = {isa = PBXBuildFile; fileRef = F38C67D62003BB45001BA762 /* ReactService.swift */; };
+		F38C67D92003BBFE001BA762 /* ReactEvent.swift in Sources */ = {isa = PBXBuildFile; fileRef = F38C67D82003BBFE001BA762 /* ReactEvent.swift */; };
+		F393C90F1FE83E7600EB0CC0 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F393C90E1FE83E7600EB0CC0 /* AppDelegate.swift */; };
+		F393C9111FE83E7600EB0CC0 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F393C9101FE83E7600EB0CC0 /* ViewController.swift */; };
+		F393C9141FE83E7600EB0CC0 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F393C9121FE83E7600EB0CC0 /* Main.storyboard */; };
+		F393C9161FE83E7600EB0CC0 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F393C9151FE83E7600EB0CC0 /* Assets.xcassets */; };
+		F393C9191FE83E7600EB0CC0 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F393C9171FE83E7600EB0CC0 /* LaunchScreen.storyboard */; };
+		F393C9211FE8811E00EB0CC0 /* MyReactViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F393C9201FE8811E00EB0CC0 /* MyReactViewController.swift */; };
+		F393C9251FE8A36100EB0CC0 /* ReactEventHook.m in Sources */ = {isa = PBXBuildFile; fileRef = F393C9241FE8A36100EB0CC0 /* ReactEventHook.m */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		19A0D48AA1EF43965A659DA8 /* Pods-chuckNorrisViewer2.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-chuckNorrisViewer2.debug.xcconfig"; path = "Pods/Target Support Files/Pods-chuckNorrisViewer2/Pods-chuckNorrisViewer2.debug.xcconfig"; sourceTree = "<group>"; };
+		3E5A0526109D46744E967341 /* Pods-chuckNorrisViewer2.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-chuckNorrisViewer2.release.xcconfig"; path = "Pods/Target Support Files/Pods-chuckNorrisViewer2/Pods-chuckNorrisViewer2.release.xcconfig"; sourceTree = "<group>"; };
+		C6A7FF68BDED18429844B326 /* Pods_chuckNorrisViewer2.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_chuckNorrisViewer2.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		F38C67D42003523F001BA762 /* ReactScene.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReactScene.swift; sourceTree = "<group>"; };
+		F38C67D62003BB45001BA762 /* ReactService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReactService.swift; sourceTree = "<group>"; };
+		F38C67D82003BBFE001BA762 /* ReactEvent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReactEvent.swift; sourceTree = "<group>"; };
+		F393C90B1FE83E7600EB0CC0 /* chuckNorrisViewer2.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = chuckNorrisViewer2.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		F393C90E1FE83E7600EB0CC0 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		F393C9101FE83E7600EB0CC0 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		F393C9131FE83E7600EB0CC0 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		F393C9151FE83E7600EB0CC0 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		F393C9181FE83E7600EB0CC0 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		F393C91A1FE83E7600EB0CC0 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		F393C9201FE8811E00EB0CC0 /* MyReactViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyReactViewController.swift; sourceTree = "<group>"; };
+		F393C9221FE8A30F00EB0CC0 /* ReactEventHook.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ReactEventHook.h; sourceTree = "<group>"; };
+		F393C9231FE8A36000EB0CC0 /* chuckNorrisViewer2-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "chuckNorrisViewer2-Bridging-Header.h"; sourceTree = "<group>"; };
+		F393C9241FE8A36100EB0CC0 /* ReactEventHook.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ReactEventHook.m; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		F393C9081FE83E7600EB0CC0 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				27130C5190832B04DA26E7AC /* Pods_chuckNorrisViewer2.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		502F862FBD9798324B203AC4 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				19A0D48AA1EF43965A659DA8 /* Pods-chuckNorrisViewer2.debug.xcconfig */,
+				3E5A0526109D46744E967341 /* Pods-chuckNorrisViewer2.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+		9B706D1A0A97CD1D77B773C8 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				C6A7FF68BDED18429844B326 /* Pods_chuckNorrisViewer2.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		F38C67D320035217001BA762 /* ReactNative */ = {
+			isa = PBXGroup;
+			children = (
+				F393C9221FE8A30F00EB0CC0 /* ReactEventHook.h */,
+				F393C9241FE8A36100EB0CC0 /* ReactEventHook.m */,
+				F38C67D42003523F001BA762 /* ReactScene.swift */,
+				F38C67D62003BB45001BA762 /* ReactService.swift */,
+				F38C67D82003BBFE001BA762 /* ReactEvent.swift */,
+			);
+			path = ReactNative;
+			sourceTree = "<group>";
+		};
+		F393C9021FE83E7600EB0CC0 = {
+			isa = PBXGroup;
+			children = (
+				F393C90D1FE83E7600EB0CC0 /* chuckNorrisViewer2 */,
+				F393C90C1FE83E7600EB0CC0 /* Products */,
+				502F862FBD9798324B203AC4 /* Pods */,
+				9B706D1A0A97CD1D77B773C8 /* Frameworks */,
+			);
+			sourceTree = "<group>";
+		};
+		F393C90C1FE83E7600EB0CC0 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				F393C90B1FE83E7600EB0CC0 /* chuckNorrisViewer2.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		F393C90D1FE83E7600EB0CC0 /* chuckNorrisViewer2 */ = {
+			isa = PBXGroup;
+			children = (
+				F38C67D320035217001BA762 /* ReactNative */,
+				F393C90E1FE83E7600EB0CC0 /* AppDelegate.swift */,
+				F393C9101FE83E7600EB0CC0 /* ViewController.swift */,
+				F393C9121FE83E7600EB0CC0 /* Main.storyboard */,
+				F393C9151FE83E7600EB0CC0 /* Assets.xcassets */,
+				F393C9171FE83E7600EB0CC0 /* LaunchScreen.storyboard */,
+				F393C91A1FE83E7600EB0CC0 /* Info.plist */,
+				F393C9201FE8811E00EB0CC0 /* MyReactViewController.swift */,
+				F393C9231FE8A36000EB0CC0 /* chuckNorrisViewer2-Bridging-Header.h */,
+			);
+			path = chuckNorrisViewer2;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		F393C90A1FE83E7600EB0CC0 /* chuckNorrisViewer2 */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = F393C91D1FE83E7600EB0CC0 /* Build configuration list for PBXNativeTarget "chuckNorrisViewer2" */;
+			buildPhases = (
+				4C784285ED2869F013FA1026 /* [CP] Check Pods Manifest.lock */,
+				F393C9071FE83E7600EB0CC0 /* Sources */,
+				F393C9081FE83E7600EB0CC0 /* Frameworks */,
+				F393C9091FE83E7600EB0CC0 /* Resources */,
+				BF212931CF28A89600B31D74 /* [CP] Embed Pods Frameworks */,
+				A1C4635171DF554A22A23D4B /* [CP] Copy Pods Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = chuckNorrisViewer2;
+			productName = chuckNorrisViewer2;
+			productReference = F393C90B1FE83E7600EB0CC0 /* chuckNorrisViewer2.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		F393C9031FE83E7600EB0CC0 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 0920;
+				LastUpgradeCheck = 0920;
+				ORGANIZATIONNAME = "Tomoaki Imai";
+				TargetAttributes = {
+					F393C90A1FE83E7600EB0CC0 = {
+						CreatedOnToolsVersion = 9.2;
+						LastSwiftMigration = 0920;
+						ProvisioningStyle = Automatic;
+					};
+				};
+			};
+			buildConfigurationList = F393C9061FE83E7600EB0CC0 /* Build configuration list for PBXProject "chuckNorrisViewer2" */;
+			compatibilityVersion = "Xcode 8.0";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = F393C9021FE83E7600EB0CC0;
+			productRefGroup = F393C90C1FE83E7600EB0CC0 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				F393C90A1FE83E7600EB0CC0 /* chuckNorrisViewer2 */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		F393C9091FE83E7600EB0CC0 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				F393C9191FE83E7600EB0CC0 /* LaunchScreen.storyboard in Resources */,
+				F393C9161FE83E7600EB0CC0 /* Assets.xcassets in Resources */,
+				F393C9141FE83E7600EB0CC0 /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		4C784285ED2869F013FA1026 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		A1C4635171DF554A22A23D4B /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-chuckNorrisViewer2/Pods-chuckNorrisViewer2-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		BF212931CF28A89600B31D74 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-chuckNorrisViewer2/Pods-chuckNorrisViewer2-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		F393C9071FE83E7600EB0CC0 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				F38C67D52003523F001BA762 /* ReactScene.swift in Sources */,
+				F393C9111FE83E7600EB0CC0 /* ViewController.swift in Sources */,
+				F393C9251FE8A36100EB0CC0 /* ReactEventHook.m in Sources */,
+				F38C67D72003BB45001BA762 /* ReactService.swift in Sources */,
+				F393C90F1FE83E7600EB0CC0 /* AppDelegate.swift in Sources */,
+				F38C67D92003BBFE001BA762 /* ReactEvent.swift in Sources */,
+				F393C9211FE8811E00EB0CC0 /* MyReactViewController.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		F393C9121FE83E7600EB0CC0 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				F393C9131FE83E7600EB0CC0 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		F393C9171FE83E7600EB0CC0 /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				F393C9181FE83E7600EB0CC0 /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		F393C91B1FE83E7600EB0CC0 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.2;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		F393C91C1FE83E7600EB0CC0 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.2;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		F393C91E1FE83E7600EB0CC0 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 19A0D48AA1EF43965A659DA8 /* Pods-chuckNorrisViewer2.debug.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = G7264S473G;
+				INFOPLIST_FILE = chuckNorrisViewer2/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.tomoima.chuckNorrisViewer2;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "chuckNorrisViewer2/chuckNorrisViewer2-Bridging-Header.h";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		F393C91F1FE83E7600EB0CC0 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 3E5A0526109D46744E967341 /* Pods-chuckNorrisViewer2.release.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = G7264S473G;
+				INFOPLIST_FILE = chuckNorrisViewer2/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.tomoima.chuckNorrisViewer2;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "chuckNorrisViewer2/chuckNorrisViewer2-Bridging-Header.h";
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		F393C9061FE83E7600EB0CC0 /* Build configuration list for PBXProject "chuckNorrisViewer2" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				F393C91B1FE83E7600EB0CC0 /* Debug */,
+				F393C91C1FE83E7600EB0CC0 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		F393C91D1FE83E7600EB0CC0 /* Build configuration list for PBXNativeTarget "chuckNorrisViewer2" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				F393C91E1FE83E7600EB0CC0 /* Debug */,
+				F393C91F1FE83E7600EB0CC0 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = F393C9031FE83E7600EB0CC0 /* Project object */;
+}
