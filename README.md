@@ -19,21 +19,13 @@
 # Setup and run
 
 ### React Native
-
-```
-npm install
-react-native start
-```
+- install dependencies by either `npm install` or `yarn install`
+- Start React Native Server by `react-native start`
 
 ### Android
 - Open Android Studio from `android/build.gradle`, and start the application from "Run" button
 
 ### iOS
-- Run command below:
-
-```
-pod install
-```
-
+- Run `pod install` beforehand and install libraries required for React Native
 - Open `ios2/chuckNorrisViewer2.xcworkspace`
 - Build and start the app
