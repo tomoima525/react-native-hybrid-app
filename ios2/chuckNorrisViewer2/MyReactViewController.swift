@@ -9,10 +9,21 @@
 import UIKit
 import React
 
+protocol SendDataProtocol: class {
+    func onSendData(data: [String:Any])
+}
+
 class MyReactViewController : UIViewController {
     let reactTag = 100
     var reactScene: ReactScene?
-    let reactService: ReactService = ReactService()
+    var callbackId: String?
+    var delegate: SendDataProtocol?
+    deinit {
+        if let callbackId = callbackId {
+            ReactService.shared.removeCallback(withId: callbackId)
+        }
+    }
+    
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         guard let scene = reactScene else {
@@ -31,21 +42,28 @@ class MyReactViewController : UIViewController {
         reactView.translatesAutoresizingMaskIntoConstraints = true
         reactView.autoresizingMask = [.flexibleWidth, .flexibleHeight]
         view.addSubview(reactView)
-        let callBack = {(event:ReactEvent) -> Void in
+        
+        callbackId = ReactService.shared.add { [weak self] event in
+            guard let strongSelf = self, strongSelf.isTopViewController else {
+                return
+            }
             switch(event) {
             case .nativeBack:
-                self.removeView()
+                self?.dismiss(animated: true, completion: nil)
+            case .selected(let data?):
+                self?.selectAndClose(data: data)
+            default:
+                return
             }
+            
         }
-        
-        reactService.setListener(callback: callBack)
     }
     
-    private func removeView() {
-        guard let v = view.viewWithTag(reactTag) else {
-            return
+    private func selectAndClose(data:[String: Any]?) {
+        if let passedData = data, let delegate = self.delegate {
+            delegate.onSendData(data: passedData)
         }
-        v.removeFromSuperview()
+        self.dismiss(animated: true, completion: nil)
     }
     
     private func makeProperties(for scene: ReactScene) -> [AnyHashable: Any] {
@@ -56,5 +74,37 @@ class MyReactViewController : UIViewController {
             "data": data,
         ]
         return properties
+    }
+    
+    //return top view controller https://gist.github.com/snikch/3661188
+    private func topViewController(of viewController: UIViewController) -> UIViewController {
+        if let vc = viewController.presentedViewController {
+            return topViewController(of: vc)
+        }
+        
+        switch viewController {
+        case let nvc as UINavigationController:
+            if let vc = nvc.visibleViewController {
+                return topViewController(of: vc)
+            }
+        case let tab as UITabBarController:
+            if let vc = tab.selectedViewController {
+                return topViewController(of: vc)
+            }
+        default:
+            for vc in viewController.childViewControllers {
+                return topViewController(of: vc)
+            }
+        }
+        return viewController
+    }
+    
+    private var isTopViewController: Bool {
+        guard let rootViewController = UIApplication.shared.keyWindow?.rootViewController else {
+            assertionFailure()
+            return false
+        }
+        
+        return topViewController(of: rootViewController) === self
     }
 }

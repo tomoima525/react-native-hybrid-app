@@ -8,8 +8,9 @@
 
 import UIKit
 
-class ViewController: UIViewController {
+class ViewController: UIViewController, SendDataProtocol {
 
+    @IBOutlet weak var selectedMessage: UILabel!
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
@@ -24,7 +25,17 @@ class ViewController: UIViewController {
     func openReact(_ sender:UIButton) {
         let nextView = storyboard!.instantiateViewController(withIdentifier: "ReactView") as! MyReactViewController
         nextView.reactScene = ReactScene.makeSearch()
+        nextView.delegate = self
         self.present(nextView, animated: true, completion: nil)
+    }
+
+    func onSendData(data: [String:Any]) {
+        guard let item = data["item"] as? String else {
+            return
+        }
+        DispatchQueue.main.async{
+            self.selectedMessage.text = item
+        }
     }
 }
 

@@ -11,30 +11,39 @@ import Foundation
 struct ReactEventCallback {
     
     let callback:((ReactEvent) -> Void)
-    
+    let callbackId = UUID().uuidString
     init(callback: @escaping ((ReactEvent) -> Void)) {
         self.callback = callback
     }
-    func onEventCalled(reactEvent: ReactEvent) {
-        callback(reactEvent)
-    }
+//    func onEventCalled(reactEvent: ReactEvent) {
+//        callback(reactEvent)
+//    }
 }
 
 @objc final class ReactService: NSObject {
     @objc static let shared = ReactService()
-    var reactEventCallback: ReactEventCallback? = nil
+    private var callbacks = [ReactEventCallback]()
 
     @objc func handleEvent(_ name: String, data: [String: Any]?) {
         guard let event = ReactEvent(name: name, data: data) else {
             return
         }
-        
-        reactEventCallback?.onEventCalled(reactEvent: event)
-        
+        callbacks.forEach { callback in
+//            callback.onEventCalled(reactEvent: event)
+            callback.callback(event)
+        }
     }
     
-    func setListener(callback:@escaping (ReactEvent) -> Void) {
-        print("listener set ")
-        self.reactEventCallback = ReactEventCallback(callback: callback)
+    func add(callback:@escaping (ReactEvent) -> Void) -> String {
+        let callback = ReactEventCallback(callback: callback)
+        callbacks.append(callback)
+        return callback.callbackId
+    }
+    
+    func removeCallback(withId id: String) {
+        guard let index = callbacks.index(where: { $0.callbackId == id }) else {
+            return
+        }
+        callbacks.remove(at: index)
     }
 }

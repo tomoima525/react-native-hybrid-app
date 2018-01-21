@@ -9,7 +9,7 @@ target 'chuckNorrisViewer2' do
       'CxxBridge', # Include this for RN >= 0.47
       'DevSupport', # Include this to enable In-App Devmenu if RN >= 0.43
       'RCTLinkingIOS',
-			'RCTAnimation',
+      'RCTAnimation',
       'RCTImage',
       'RCTText',
       'RCTNetwork',
