@@ -1,3 +1,4 @@
 <resources>
+    <string moduleConfig="true" name="reactNativeCodePush_androidDeploymentKey">r6syzMGvjcLZOMV3M85niBfSYb0FS13BYoThf</string>
     <string name="app_name">ChuckNorrisViewer</string>
 </resources>

@@ -25,4 +25,6 @@ target 'chuckNorrisViewer2' do
     pod 'Folly', :podspec => '../node_modules/react-native/third-party-podspecs/Folly.podspec'
   # Pods for chuckNorrisViewer2
 
+  pod 'CodePush', :path => '../node_modules/react-native-code-push'
+
 end

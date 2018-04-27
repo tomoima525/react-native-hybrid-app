@@ -159,6 +159,7 @@ android {
 }
 
 dependencies {
+    compile project(':react-native-code-push')
     implementation fileTree(dir: "libs", include: ["*.jar"])
     implementation "com.android.support:appcompat-v7:26.0.2"
     implementation "com.facebook.react:react-native:+"  // From node_modules
