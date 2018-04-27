@@ -95,7 +95,6 @@ def enableProguardInReleaseBuilds = false
 
 android {
     compileSdkVersion 26
-    buildToolsVersion "26.0.2"
 
     defaultConfig {
         applicationId "com.chucknorrisviewer"
@@ -164,10 +163,10 @@ dependencies {
     implementation "com.android.support:appcompat-v7:26.0.2"
     implementation "com.facebook.react:react-native:+"  // From node_modules
     implementation 'com.android.support.constraint:constraint-layout:1.0.2'
-    implementation 'com.google.dagger:dagger:2.11'
-    annotationProcessor 'com.google.dagger:dagger-compiler:2.9'
-    implementation 'io.reactivex.rxjava2:rxjava:2.1.5'
-    implementation 'io.reactivex.rxjava2:rxandroid:2.0.1'
+    implementation 'com.google.dagger:dagger:2.15'
+    annotationProcessor 'com.google.dagger:dagger-compiler:2.15'
+    implementation 'io.reactivex.rxjava2:rxjava:2.1.10'
+    implementation 'io.reactivex.rxjava2:rxandroid:2.0.2'
 }
 
 // Run this once to be able to run the application with BUCK
