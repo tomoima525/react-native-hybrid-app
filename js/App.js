@@ -1,6 +1,8 @@
 import React, { Component } from 'react';
 import { View } from 'react-native';
 import Scenes from './scenes';
+import codePush from 'react-native-code-push';
+import CodePush from 'react-native-code-push';
 
 class App extends Component {
   render() {
@@ -11,5 +13,5 @@ class App extends Component {
     );
   }
 }
-
+App = codePush(App);
 export default App;

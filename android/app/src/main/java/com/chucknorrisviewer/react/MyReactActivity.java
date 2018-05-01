@@ -1,5 +1,6 @@
 package com.chucknorrisviewer.react;
 
+import android.annotation.SuppressLint;
 import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
@@ -32,6 +33,7 @@ public class MyReactActivity extends AppCompatActivity implements DefaultHardwar
         return intent;
     }
 
+    @SuppressLint("CheckResult")
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         //Dependency Injection
@@ -77,7 +79,7 @@ public class MyReactActivity extends AppCompatActivity implements DefaultHardwar
     @Override
     protected void onPause() {
         super.onPause();
-
+        disposable = null;
         if (reactInstanceManager != null) {
             reactInstanceManager.onHostPause(this);
         }

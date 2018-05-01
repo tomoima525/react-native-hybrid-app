@@ -9,6 +9,7 @@ import com.facebook.react.ReactInstanceManager;
 import com.facebook.react.ReactInstanceManagerBuilder;
 import com.facebook.react.common.LifecycleState;
 import com.facebook.react.shell.MainReactPackage;
+import com.microsoft.codepush.react.CodePush;
 
 import io.reactivex.Flowable;
 import io.reactivex.processors.BehaviorProcessor;
@@ -23,27 +24,23 @@ public class ReactService {
             = BehaviorProcessor.create();
     private EventProcessor eventProcessor = new EventProcessor();
 
-    private final ReactRepository reactRepository;
+    public ReactService(Application application) {
+        ReactInstanceManagerBuilder builder = ReactInstanceManager.builder()
+                .setApplication(application)
+                .setJSMainModulePath("index")
+                .addPackage(new MainReactPackage())
+                .addPackage(new MyReactPackage(eventProcessor))
+                .addPackage(
+                        new CodePush(
+                                BuildConfig.DEBUG_CODE_PUSH_KEY,
+                                application,
+                                BuildConfig.DEBUG))
+                .setUseDeveloperSupport(BuildConfig.DEBUG)
+                .setJSBundleFile(CodePush.getJSBundleFile())
+                .setInitialLifecycleState(LifecycleState.RESUMED);
 
-    public ReactService(Application application, ReactRepository reactRepository) {
-        this.reactRepository = reactRepository;
-        // Load js bundle file from repository and cache ReactInstanceManager
-        reactRepository.observeJSBundle()
-                .subscribe(jsBundle -> {
-                    ReactInstanceManagerBuilder builder = ReactInstanceManager.builder()
-                            .setApplication(application)
-                            .setJSMainModulePath("index")
-                            .addPackage(new MainReactPackage())
-                            .addPackage(new MyReactPackage(eventProcessor))
-                            .setUseDeveloperSupport(BuildConfig.DEBUG)
-                            .setInitialLifecycleState(LifecycleState.RESUMED);
-                    if (jsBundle.isAssets()) {
-                        builder.setBundleAssetName(jsBundle.getPath());
-                    } else {
-                        builder.setJSBundleFile(jsBundle.getPath());
-                    }
-                    cache.onNext(builder.build());
-                });
+                cache.onNext(builder.build());
+
     }
 
     Flowable<ReactInstanceManager> observeReactInstanceManager() {
@@ -56,8 +53,7 @@ public class ReactService {
 
     public void fetchJSFile() {
         // Here, usually download the latest JS file from server.
-        // if the file exists, update repository
-        //reactRepository.setJSPath(jsPath, false);
+        // if the file exists, update ReactInstanceManager
     }
 
 }

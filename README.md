@@ -18,6 +18,9 @@
 - master branch is a very basic implementation of the hybrid application on iOS.
 - You might want to use RxSwift or other Reactive programming library to implement Observer Pattern.
 
+
+### 
+
 # Setup and run
 
 ### React Native
@@ -25,7 +28,14 @@
 - Start React Native Server by `react-native start`
 
 ### Android
+- Create `android/app/private.properties` and set below
+
+```
+CODE_PUSH_KEY=xxx //set the real key if you want to use CodePush
+```
+
 - Open Android Studio from `android/build.gradle`, and start the application from "Run" button
+- If you want to run CodePush, use `releaseStaging` Build Variant. Other codepush setup is written here: https://docs.microsoft.com/en-US/appcenter/distribution/codepush/react-native
 
 ### iOS
 - Run `pod install` beforehand and install libraries required for React Native

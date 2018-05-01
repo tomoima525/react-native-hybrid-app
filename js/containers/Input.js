@@ -10,7 +10,7 @@ class Input extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      hint: 'Input'
+      hint: 'Input keyword'
     };
   }
   render() {
