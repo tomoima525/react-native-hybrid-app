@@ -14,12 +14,28 @@ PODS:
   - boost/preprocessor-includes (1.59.0)
   - boost/shared_ptr-includes (1.59.0)
   - boost/string_algorithms-includes (1.59.0)
+  - CodePush (5.3.2):
+    - CodePush/Base64 (= 5.3.2)
+    - CodePush/Core (= 5.3.2)
+    - CodePush/JWT (= 5.3.2)
+    - CodePush/SSZipArchive (= 5.3.2)
+    - React
+  - CodePush/Base64 (5.3.2):
+    - React
+  - CodePush/Core (5.3.2):
+    - React
+  - CodePush/JWT (5.3.2):
+    - React
+  - CodePush/SSZipArchive (5.3.2):
+    - React
   - DoubleConversion (1.1.5)
   - Folly (2016.09.26.00):
     - boost
     - DoubleConversion
     - GLog
   - GLog (0.3.4)
+  - React (0.51.0):
+    - React/Core (= 0.51.0)
   - React/Core (0.51.0):
     - yoga (= 0.51.0.React)
   - React/CxxBridge (0.51.0):
@@ -38,6 +54,8 @@ PODS:
     - Folly (= 2016.09.26.00)
     - React/PrivateDatabase
   - React/PrivateDatabase (0.51.0)
+  - React/RCTAnimation (0.51.0):
+    - React/Core
   - React/RCTBlob (0.51.0):
     - React/Core
   - React/RCTImage (0.51.0):
@@ -56,12 +74,14 @@ PODS:
   - yoga (0.51.0.React)
 
 DEPENDENCIES:
+  - CodePush (from `../node_modules/react-native-code-push`)
   - DoubleConversion (from `../node_modules/react-native/third-party-podspecs/DoubleConversion.podspec`)
   - Folly (from `../node_modules/react-native/third-party-podspecs/Folly.podspec`)
   - GLog (from `../node_modules/react-native/third-party-podspecs/GLog.podspec`)
   - React/Core (from `../node_modules/react-native`)
   - React/CxxBridge (from `../node_modules/react-native`)
   - React/DevSupport (from `../node_modules/react-native`)
+  - React/RCTAnimation (from `../node_modules/react-native`)
   - React/RCTImage (from `../node_modules/react-native`)
   - React/RCTLinkingIOS (from `../node_modules/react-native`)
   - React/RCTNetwork (from `../node_modules/react-native`)
@@ -69,7 +89,13 @@ DEPENDENCIES:
   - React/RCTWebSocket (from `../node_modules/react-native`)
   - yoga (from `../node_modules/react-native/ReactCommon/yoga`)
 
+SPEC REPOS:
+  https://github.com/CocoaPods/Specs.git:
+    - boost
+
 EXTERNAL SOURCES:
+  CodePush:
+    :path: "../node_modules/react-native-code-push"
   DoubleConversion:
     :podspec: "../node_modules/react-native/third-party-podspecs/DoubleConversion.podspec"
   Folly:
@@ -83,12 +109,13 @@ EXTERNAL SOURCES:
 
 SPEC CHECKSUMS:
   boost: 30a15ffb6d9aa4646dd3caffc960753f4cb4ca4e
+  CodePush: af67b07310e4037ecd5c38f03c7a51c6350240b5
   DoubleConversion: ebb6747c5b66026ad4f97b789c3ceac6f18e57a6
   Folly: b7255b29f1d693c375d642d0f04f0592181156d9
   GLog: 3e4e4ae9746ce6bf6e9420c7fc1e08ad59c8ba1a
-  React: 352f02f1db6e4744f9a758527e13e3fdefbbd6ba
-  yoga: b5d96400ca8b2936965a7a6516da7c1177f432a3
+  React: 541ba768b9855e10cdc76f55427a5cd0653ca806
+  yoga: 17521bbb0dd54a47c0b3ac43253e78cdac7488e0
 
-PODFILE CHECKSUM: b8a381067bd1c82dc6a11b5d0e4eb4b70ee639dd
+PODFILE CHECKSUM: c81d83f4e585720f7170ce2aeb410bfd899257f1
 
-COCOAPODS: 1.2.1
+COCOAPODS: 1.5.0

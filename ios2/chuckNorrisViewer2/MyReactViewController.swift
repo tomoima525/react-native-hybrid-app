@@ -8,6 +8,7 @@
 
 import UIKit
 import React
+import CodePush
 
 protocol SendDataProtocol: class {
     func onSendData(data: [String:Any])
@@ -29,7 +30,14 @@ class MyReactViewController : UIViewController {
         guard let scene = reactScene else {
             return
         }
-        let jsCodeLocation = URL(string: "http://localhost:8081/index.bundle?platform=ios")
+        var jsCodeLocation: URL?
+        #if DEBUG
+          jsCodeLocation = URL(string: "http://localhost:8081/index.bundle?platform=ios")
+        #else
+          jsCodeLocation = CodePush.bundleURL()
+        print("js location")
+        print(jsCodeLocation)
+        #endif
         let reactView: UIView
         reactView = RCTRootView(
             bundleURL: jsCodeLocation,
