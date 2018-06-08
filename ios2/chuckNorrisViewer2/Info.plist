@@ -47,11 +47,6 @@
 	<dict>
 		<key>NSExceptionDomains</key>
 		<dict>
-			<key>codepush.azurewebsites.net</key>
-			<dict>
-				<key>NSTemporaryExceptionAllowsInsecureHTTPLoads</key>
-				<true/>
-			</dict>
 			<key>localhost</key>
 			<dict>
 				<key>NSTemporaryExceptionAllowsInsecureHTTPLoads</key>

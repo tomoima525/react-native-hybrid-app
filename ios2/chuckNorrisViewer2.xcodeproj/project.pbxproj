@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		27130C5190832B04DA26E7AC /* Pods_chuckNorrisViewer2.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C6A7FF68BDED18429844B326 /* Pods_chuckNorrisViewer2.framework */; };
+		F3867BD320CA07D100A15411 /* main.jsbundle in Resources */ = {isa = PBXBuildFile; fileRef = F3867BD220CA07D100A15411 /* main.jsbundle */; };
 		F38C67D52003523F001BA762 /* ReactScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = F38C67D42003523F001BA762 /* ReactScene.swift */; };
 		F38C67D72003BB45001BA762 /* ReactService.swift in Sources */ = {isa = PBXBuildFile; fileRef = F38C67D62003BB45001BA762 /* ReactService.swift */; };
 		F38C67D92003BBFE001BA762 /* ReactEvent.swift in Sources */ = {isa = PBXBuildFile; fileRef = F38C67D82003BBFE001BA762 /* ReactEvent.swift */; };
@@ -23,7 +24,10 @@
 /* Begin PBXFileReference section */
 		19A0D48AA1EF43965A659DA8 /* Pods-chuckNorrisViewer2.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-chuckNorrisViewer2.debug.xcconfig"; path = "Pods/Target Support Files/Pods-chuckNorrisViewer2/Pods-chuckNorrisViewer2.debug.xcconfig"; sourceTree = "<group>"; };
 		3E5A0526109D46744E967341 /* Pods-chuckNorrisViewer2.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-chuckNorrisViewer2.release.xcconfig"; path = "Pods/Target Support Files/Pods-chuckNorrisViewer2/Pods-chuckNorrisViewer2.release.xcconfig"; sourceTree = "<group>"; };
+		BE722C8DEAC10570473E8A0E /* Pods-chuckNorrisViewer2.staging.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-chuckNorrisViewer2.staging.xcconfig"; path = "Pods/Target Support Files/Pods-chuckNorrisViewer2/Pods-chuckNorrisViewer2.staging.xcconfig"; sourceTree = "<group>"; };
 		C6A7FF68BDED18429844B326 /* Pods_chuckNorrisViewer2.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_chuckNorrisViewer2.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		F3867BD220CA07D100A15411 /* main.jsbundle */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = main.jsbundle; sourceTree = "<group>"; };
+		F3867BDC20CAE44100A15411 /* CodePush.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = CodePush.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		F38C67D42003523F001BA762 /* ReactScene.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReactScene.swift; sourceTree = "<group>"; };
 		F38C67D62003BB45001BA762 /* ReactService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReactService.swift; sourceTree = "<group>"; };
 		F38C67D82003BBFE001BA762 /* ReactEvent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReactEvent.swift; sourceTree = "<group>"; };
@@ -57,6 +61,7 @@
 			children = (
 				19A0D48AA1EF43965A659DA8 /* Pods-chuckNorrisViewer2.debug.xcconfig */,
 				3E5A0526109D46744E967341 /* Pods-chuckNorrisViewer2.release.xcconfig */,
+				BE722C8DEAC10570473E8A0E /* Pods-chuckNorrisViewer2.staging.xcconfig */,
 			);
 			name = Pods;
 			sourceTree = "<group>";
@@ -64,6 +69,7 @@
 		9B706D1A0A97CD1D77B773C8 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				F3867BDC20CAE44100A15411 /* CodePush.framework */,
 				C6A7FF68BDED18429844B326 /* Pods_chuckNorrisViewer2.framework */,
 			);
 			name = Frameworks;
@@ -102,6 +108,7 @@
 		F393C90D1FE83E7600EB0CC0 /* chuckNorrisViewer2 */ = {
 			isa = PBXGroup;
 			children = (
+				F3867BD220CA07D100A15411 /* main.jsbundle */,
 				F38C67D320035217001BA762 /* ReactNative */,
 				F393C90E1FE83E7600EB0CC0 /* AppDelegate.swift */,
 				F393C9101FE83E7600EB0CC0 /* ViewController.swift */,
@@ -180,6 +187,7 @@
 				F393C9191FE83E7600EB0CC0 /* LaunchScreen.storyboard in Resources */,
 				F393C9161FE83E7600EB0CC0 /* Assets.xcassets in Resources */,
 				F393C9141FE83E7600EB0CC0 /* Main.storyboard in Resources */,
+				F3867BD320CA07D100A15411 /* main.jsbundle in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -325,7 +333,7 @@
 		};
 		F379B0C120C9DC2F00D43572 /* Staging */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 3E5A0526109D46744E967341 /* Pods-chuckNorrisViewer2.release.xcconfig */;
+			baseConfigurationReference = BE722C8DEAC10570473E8A0E /* Pods-chuckNorrisViewer2.staging.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
